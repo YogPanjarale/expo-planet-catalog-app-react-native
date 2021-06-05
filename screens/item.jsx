@@ -1,13 +1,22 @@
 import React, { Component } from 'react'
+import { Text, View } from 'react-native'
 
-class PlanetItem extends Component{
-    constructor(planetName){
+export class PlanetItem extends Component {
+    constructor(){
         super()
         this.state={
-            planetName:planetName,
+            planetName:this.props.planetName,
             data:{},
             url:'http://yog1.ddns.net:5000/planet?name='+planetName
         }
     }
-    // get
+    render() {
+        return (
+            <View>
+                <Text> Item Screen </Text>
+            </View>
+        )
+    }
 }
+
+export default PlanetItem
