@@ -60,12 +60,12 @@ class PlanetItem extends Component {
             Alert.alert("error", e.message)
         })
     }
-    componentWillUnmount(){
+    componentWillUnmount() {
         axios.Cancel()
     }
     render() {
         if (this.state.dataAvailable) {
-            const { gravity, mass,radius, name, planet_type ,in_goldilocks_zone} = {
+            const { gravity, mass, radius, name, planet_type, in_goldilocks_zone } = {
                 "gravity": 39.27859895089982,
                 "in_goldilocks_zone": true,
                 "mass": "4",
@@ -79,27 +79,27 @@ class PlanetItem extends Component {
             return (
                 <View>
                     <Card>
-                        <Card.Image source={getImage(planet_type)}  style={{
-                            alignSelf:'center',
-    height:500,
-    // width:500
-    borderRadius:50,
-  }} resizeMode='cover' accessibilityHint={"Planet Type :"+planet_type}/>
-  <Card.Divider/>
+                        <Card.Image source={getImage(planet_type)} style={{
+                            alignSelf: 'center',
+                            height: 500,
+                            // width:500
+                            borderRadius: 50,
+                        }} resizeMode='cover' accessibilityHint={"Planet Type :" + planet_type} />
+                        <Card.Divider />
                         <Card.Title>
-                            {name}{in_goldilocks_zone?"🌟":""}
+                            {name}{in_goldilocks_zone ? "🌟" : ""}
                         </Card.Title>
                         <Text>
                             {planet_type}
                         </Text>
                         <Text>
-                        Mass : {mass} times of Earth
+                            Mass : {mass} times of Earth
                         </Text>
                         <Text>
-                        Radius : {radius} times of Earth
+                            Radius : {radius} times of Earth
                         </Text>
                         <Text>
-                        Gravity : {gravity.toFixed(3)} g
+                            Gravity : {gravity.toFixed(3)} g
                         </Text>
 
                     </Card>
