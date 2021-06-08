@@ -65,28 +65,17 @@ class PlanetItem extends Component {
     }
     render() {
         if (this.state.dataAvailable) {
-            const { gravity, mass, radius, name, planet_type, in_goldilocks_zone } = {
-                "gravity": 39.27859895089982,
-                "in_goldilocks_zone": true,
-                "mass": "4",
-                "name": "GJ 667 C g",
-                "orbital_period": 256.2,
-                "orbital_radius": 0.549,
-                "planet_type": "Super Earth",
-                "radius": "1",
-                "speed": 23.312612151638543
-            }
+            const { gravity, mass, radius, name, planet_type, in_goldilocks_zone } = this.state.data
             return (
                 <View>
                     <Card>
                         <Card.Image source={getImage(planet_type)} style={{
                             alignSelf: 'center',
                             height: 500,
-                            // width:500
                             borderRadius: 50,
                         }} resizeMode='cover' accessibilityHint={"Planet Type :" + planet_type} />
                         <Card.Divider />
-                        <Card.Title>
+                        <Card.Title h4>
                             {name}{in_goldilocks_zone ? "🌟" : ""}
                         </Card.Title>
                         <Text>
