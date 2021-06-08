@@ -29,7 +29,8 @@ export class Catalog extends Component {
         // const data=
         // console.log(item)
 
-        return (<View style={{
+        return (
+        <View style={{
             backgroundColor: '#feefee',
             minWidth: StatusBar.currentHeight / 2,
             padding: 20,
@@ -37,9 +38,11 @@ export class Catalog extends Component {
             marginHorizontal: 16,
         }}>
             <TouchableOpacity>
-                <Text>{item.name}</Text>
+                <Text style={{fontWeight:'500',fontSize:24}}>{item.name}</Text>
+                <Text style={{fontWeight:'normal'}}>{item.name}</Text>
             </TouchableOpacity>
-        </View>)
+        </View>
+        )
     }
     render() {
         return (
