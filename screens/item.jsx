@@ -3,7 +3,7 @@ import { Text, View, Alert, Image } from 'react-native'
 import axios from 'axios';
 import { Card } from 'react-native-elements';
 
-function getImage(planettype) {
+export function getImage(planettype) {
     let planet_type = '';
     switch (planettype) {
         case 'Super Earth':
