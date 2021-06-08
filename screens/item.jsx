@@ -33,10 +33,12 @@ function getImage(planettype) {
     // }
 }
 class PlanetItem extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
+        // console.log(this)
+        const name = this.props.navigation.getParam('name')
         this.state = {
-            planetName: "GJ 667 C g",
+            planetName: name,
             data: null,
             url: 'http://yog1.ddns.net:5000/planet',
             dataAvailable: false,

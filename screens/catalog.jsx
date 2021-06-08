@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 import { Alert, FlatList, View, Text, StatusBar, TouchableOpacity } from 'react-native'
 
 export class Catalog extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             allData: [],
             url: "http://yog1.ddns.net:5000/all"
@@ -30,18 +30,18 @@ export class Catalog extends Component {
         // console.log(item)
 
         return (
-        <View style={{
-            backgroundColor: '#feefee',
-            minWidth: StatusBar.currentHeight / 2,
-            padding: 20,
-            marginVertical: 8,
-            marginHorizontal: 16,
-        }}>
-            <TouchableOpacity>
-                <Text style={{fontWeight:'500',fontSize:24}}>{item.name}</Text>
-                <Text style={{fontWeight:'normal'}}>{item.name}</Text>
-            </TouchableOpacity>
-        </View>
+            <View style={{
+                backgroundColor: '#feefee',
+                minWidth: StatusBar.currentHeight / 2,
+                padding: 20,
+                marginVertical: 8,
+                marginHorizontal: 16,
+            }}>
+                <TouchableOpacity>
+                    <Text style={{ fontWeight: '500', fontSize: 24 }}>{item.name}</Text>
+                    <Text style={{ fontWeight: 'normal' }}>{item.name}</Text>
+                </TouchableOpacity>
+            </View>
         )
     }
     render() {
@@ -50,9 +50,15 @@ export class Catalog extends Component {
                 flex: 1,
                 marginTop: StatusBar.currentHeight || 0,
             }}>
-                <FlatList data={this.state.allData} renderItem={this.Item} keyExtractor={(item, index) => { return index + "no error" }}>
+                {/* <FlatList data={this.state.allData} renderItem={this.Item} keyExtractor={(item, index) => { return index + "no error" }}> */}
 
-                </FlatList>
+                <FlatList data={this.state.allData}
+                    renderItem={({ item }) => (<TouchableOpacity onPress={() => this.props.navigation.navigate("PlanetItem", item)}>
+                        <Text>{JSON.stringify(item)}</Text>
+                    </TouchableOpacity>)}
+                    keyExtractor={(i,k)=>k+"no error"}
+                />
+
             </View>
         )
     }

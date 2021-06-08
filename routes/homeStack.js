@@ -4,12 +4,11 @@ import { Catalog } from "../screens/catalog";
 import PlanetItem from "../screens/item";
 
 const screens = {
-    PlanetItem:{
-        screen:PlanetItem
-    },
     Catalog:{
         screen:Catalog,
-    
+    },
+    PlanetItem:{
+        screen:PlanetItem
     },
 }
 const HomeStack = createStackNavigator(screens)
