@@ -65,7 +65,7 @@ class PlanetItem extends Component {
     }
     render() {
         if (this.state.dataAvailable) {
-            const { gravity, mass, radius, name, planet_type, in_goldilocks_zone } = this.state.data
+            const { gravity, mass, radius, name, planet_type, in_goldilocks_zone,orbital_period ,orbital_radius,speed} = this.state.data
             const dummnyData={
                 "gravity": 39.27859895089982,
                 "in_goldilocks_zone": true,
@@ -90,6 +90,9 @@ class PlanetItem extends Component {
                             {name}{in_goldilocks_zone ? "🌟" : ""}
                         </Card.Title>
                         <Text>
+                        {in_goldilocks_zone ? "In Goldilocks Zone" : ""}
+                        </Text>
+                        <Text>
                             {planet_type}
                         </Text>
                         <Text>
@@ -101,7 +104,15 @@ class PlanetItem extends Component {
                         <Text>
                             Gravity : {gravity.toFixed(3)} g
                         </Text>
-
+                        <Text>
+                        Orbital Period : {orbital_period} days
+                        </Text>
+                        <Text>
+                        Orbital Radius : {orbital_radius} times of Earth
+                        </Text>
+                        <Text>
+                            Speed : {speed.toFixed(3)}
+                            </Text>
                     </Card>
                 </View>
             )
