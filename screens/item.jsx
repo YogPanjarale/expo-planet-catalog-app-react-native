@@ -79,6 +79,13 @@ class PlanetItem extends Component {
             return (
                 <View>
                     <Card>
+                        <Card.Image source={getImage(planet_type)}  style={{
+                            alignSelf:'center',
+    height:500,
+    // width:500
+    borderRadius:50,
+  }} resizeMode='cover' accessibilityHint={"Planet Type :"+planet_type}/>
+  <Card.Divider/>
                         <Card.Title>
                             {name}{in_goldilocks_zone?"🌟":""}
                         </Card.Title>
