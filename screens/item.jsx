@@ -119,7 +119,7 @@ class PlanetItem extends Component {
         }
         return (
             <View>
-                <Text> Item Screen </Text>
+            <Card><Card.Title>Planet Not Found</Card.Title></Card>
             </View>
         )
     }
