@@ -85,10 +85,10 @@ class PlanetItem extends Component {
                             height: 500,
                             borderRadius: 50,
                         }} resizeMode='cover' accessibilityHint={"Planet Type :" + planet_type} />
-                        <Card.Divider />
                         <Card.Title h4>
                             {name}{in_goldilocks_zone ? "🌟" : ""}
                         </Card.Title>
+                        <Card.Divider />
                         <Text>
                         {in_goldilocks_zone ? "In Goldilocks Zone" : ""}
                         </Text>
@@ -113,6 +113,7 @@ class PlanetItem extends Component {
                         <Text>
                             Speed : {speed.toFixed(3)}
                             </Text>
+                    
                     </Card>
                 </View>
             )
